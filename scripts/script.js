@@ -50,35 +50,35 @@ const catalog = document.querySelector('.catalog');
 const modalItem = document.querySelector('.modal__item');
 const modalItemClose = modalItem.querySelector('.modal__close');
 
-const onItemModalEscPress = (event) => {
+const onModalItemEscPress = (event) => {
   if (event.key === ESC_CODE) {
-    hideItemModal();
+    hideModalItem();
   }
 };
 
 const onModalItemCloseClick = () => {
-  hideItemModal();
+  hideModalItem();
 };
 
 const onModalItemClick = (event) => {
   if (event.target === modalItem) {
-    hideItemModal();
+    hideModalItem();
   }
 };
 
-const showItemModal = () => {
+const showModalItem = () => {
   modalItem.classList.remove(HIDE_CLASS);
-  document.addEventListener('keyup', onItemModalEscPress);
+  document.addEventListener('keyup', onModalItemEscPress);
 };
 
-const hideItemModal = () => {
+const hideModalItem = () => {
   modalItem.classList.add(HIDE_CLASS);
-  document.removeEventListener('keyup', onItemModalEscPress);
+  document.removeEventListener('keyup', onModalItemEscPress);
 };
 
 const onCatalogClick = (event) => {
   if (event.target.closest('.card')) {
-    showItemModal();
+    showModalItem();
   }
 };
 
